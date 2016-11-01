@@ -8,28 +8,36 @@ Através dos atributos e métodos da classe, com este arquivo viso melhorar a fo
 ## Usando
 
 ### Conectando
-    require "mysql.class.php";
+```php
+require "mysql.class.php";
 
-    $sql = new MySQL();
-    $sql->host = "localhost";
-    $sql->connect();
+$sql = new MySQL();
+$sql->host = "localhost";
+$sql->connect();
+```
 
 ### Executando consulta
-    $sql->query("SELECT * FROM nomes");
+```php
+$sql->query("SELECT * FROM nomes");
+```
 
 ### Resultados e contagem
-    echo $sql->count()." linhas";
-    // Resultado: 5 linhas
-    
-    while($dados = $sql->fetch()) {
-      var_dump($dados);
-    }
+```php
+echo $sql->count()." linhas";
+// Resultado: 5 linhas
+
+while($dados = $sql->fetch()) {
+	var_dump($dados);
+}
+```
 
 ### Diferentes consultas
-    $consulta1 = $sql->query("SELECT * FROM nomes");
-    $consulta2 = $sql->query("SELECT * FROM telefones");
-    echo "Tem ".$sql->count($consulta1)." nomes e ".$sql->count($consulta2)." telefones";
-    // Resultado: Tem 5 nomes e 7 telefones
+```php
+$consulta1 = $sql->query("SELECT * FROM nomes");
+$consulta2 = $sql->query("SELECT * FROM telefones");
+echo "Tem ".$sql->count($consulta1)." nomes e ".$sql->count($consulta2)." telefones";
+// Resultado: Tem 5 nomes e 7 telefones
+```
 
 Espero que tenham gostado e que seja útil para tornar o código mais limpo.
 
